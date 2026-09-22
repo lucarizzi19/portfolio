@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -40,36 +41,29 @@ export default function Home() {
     <main className="min-h-screen bg-neutral-950 text-white">
 
       {/* HEADER */}
-      {/* HEADER */}
       <header className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 lg:px-10">
-
-        <a
+        <Link
           href="/"
           className="text-lg font-semibold tracking-tight transition hover:text-neutral-400"
         >
           Luca Rizzi
-        </a>
+        </Link>
 
         <nav className="flex gap-6 text-sm text-neutral-500">
-
-          <a
+          <Link
             href="/#about"
             className="transition hover:text-white"
           >
             About
-          </a>
-
+          </Link>
         </nav>
-
       </header>
 
       {/* INTRO */}
       <section className="mx-auto max-w-[1400px] px-6 pb-16 pt-10 lg:px-12">
-
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
 
           <div>
-
             <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">
               Industrial Model Maker
             </p>
@@ -77,7 +71,6 @@ export default function Home() {
             <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
               From CAD to physical models.
             </h1>
-
           </div>
 
           <p className="max-w-md text-sm leading-6 text-neutral-500">
@@ -86,18 +79,14 @@ export default function Home() {
           </p>
 
         </div>
-
       </section>
-
 
       {/* PROJECTS */}
       <section
         id="projects"
         className="mx-auto max-w-[1400px] px-6 pb-32 lg:px-12"
       >
-
         <div className="mb-8 flex items-end justify-between border-b border-neutral-900 pb-4">
-
           <p className="text-xs uppercase tracking-[0.3em] text-neutral-600">
             Projects
           </p>
@@ -105,14 +94,11 @@ export default function Home() {
           <p className="text-xs text-neutral-700">
             {String(projects.length).padStart(2, "0")} projects
           </p>
-
         </div>
-
 
         <div className="grid gap-x-8 gap-y-14 sm:grid-cols-1 lg:grid-cols-4">
 
           {projects.map((project, index) => {
-
             const content = (
               <>
                 {/* IMAGE */}
@@ -129,9 +115,7 @@ export default function Home() {
                     />
                   ) : (
                     <div className="flex h-full items-center justify-center">
-
                       <div className="text-center">
-
                         <p className="text-xs uppercase tracking-[0.25em] text-neutral-700">
                           Project {String(index + 1).padStart(2, "0")}
                         </p>
@@ -139,18 +123,14 @@ export default function Home() {
                         <p className="mt-2 text-xs text-neutral-800">
                           Coming soon
                         </p>
-
                       </div>
-
                     </div>
                   )}
 
                 </div>
 
-
                 {/* INFO */}
                 <div className="mt-5">
-
                   <div className="flex items-start justify-between gap-4">
 
                     <p className="text-xs uppercase tracking-[0.15em] text-neutral-500">
@@ -176,35 +156,35 @@ export default function Home() {
                       View project →
                     </div>
                   )}
-
                 </div>
               </>
             );
 
-            return project.link ? (
-              <a
+            if (!project.link) {
+              return (
+                <div
+                  key={project.title}
+                  className="group block"
+                >
+                  {content}
+                </div>
+              );
+            }
+
+            return (
+              <Link
                 key={project.title}
                 href={project.link}
                 className="group block"
               >
                 {content}
-              </a>
-            ) : (
-              <div
-                key={project.title}
-                className="group block"
-              >
-                {content}
-              </div>
+              </Link>
             );
           })}
 
         </div>
-
       </section>
 
-
-      {/* CONTACT / LINKS */}
       {/* ABOUT */}
       <section
         id="about"
@@ -216,7 +196,6 @@ export default function Home() {
 
             {/* ABOUT TEXT */}
             <div>
-
               <p className="text-xs uppercase tracking-[0.3em] text-neutral-600">
                 About
               </p>
@@ -239,9 +218,7 @@ export default function Home() {
                 electronics and mechanical projects — especially when CAD
                 eventually becomes something physical.
               </p>
-
             </div>
-
 
             {/* LINKS */}
             <div className="flex flex-wrap gap-3">
@@ -252,7 +229,6 @@ export default function Home() {
                 download
                 className="inline-flex items-center gap-2 rounded-lg border border-neutral-700 px-5 py-3 text-sm font-medium text-neutral-200 transition hover:border-neutral-500 hover:bg-neutral-900 hover:text-white"
               >
-
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -269,9 +245,7 @@ export default function Home() {
                 </svg>
 
                 Download CV
-
               </a>
-
 
               {/* LINKEDIN */}
               <a
@@ -280,7 +254,6 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-neutral-700 px-5 py-3 text-sm font-medium text-neutral-200 transition hover:border-neutral-500 hover:bg-neutral-900 hover:text-white"
               >
-
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -291,32 +264,19 @@ export default function Home() {
                 </svg>
 
                 LinkedIn
-
               </a>
 
             </div>
-
           </div>
-
         </div>
       </section>
 
-
       {/* FOOTER */}
       <footer className="border-t border-neutral-900 px-6 py-8 lg:px-12">
-
         <div className="mx-auto flex max-w-[1400px] justify-between text-xs text-neutral-700">
-
-          <span>
-            Luca Rizzi
-          </span>
-
-          <span>
-            Industrial Model Maker
-          </span>
-
+          <span>Luca Rizzi</span>
+          <span>Industrial Model Maker</span>
         </div>
-
       </footer>
 
     </main>

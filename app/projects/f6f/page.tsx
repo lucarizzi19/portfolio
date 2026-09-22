@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageLightbox from "@/components/ImageLightbox";
 
 export default function F6FProject() {
   const gallery = [
@@ -38,14 +38,15 @@ export default function F6FProject() {
         </a>
 
         <nav className="flex gap-6 text-sm text-neutral-500">
-
-          <a href="/#about" className="transition hover:text-white">
+          <a
+            href="/#about"
+            className="transition hover:text-white"
+          >
             About
           </a>
         </nav>
 
       </header>
-
 
       {/* PROJECT */}
       <section className="mx-auto max-w-[1400px] px-6 pb-16 pt-10 lg:px-10">
@@ -66,11 +67,10 @@ export default function F6FProject() {
               lighting.
             </p>
 
-
             {/* SMALL INFO */}
             <div className="mt-8 space-y-3 border-t border-neutral-900 pt-5">
 
-              <div className="flex justify-between max-w-sm text-sm">
+              <div className="flex max-w-sm justify-between text-sm">
                 <span className="text-neutral-600">
                   Type
                 </span>
@@ -80,7 +80,7 @@ export default function F6FProject() {
                 </span>
               </div>
 
-              <div className="flex justify-between max-w-sm text-sm">
+              <div className="flex max-w-sm justify-between text-sm">
                 <span className="text-neutral-600">
                   Construction
                 </span>
@@ -90,7 +90,7 @@ export default function F6FProject() {
                 </span>
               </div>
 
-              <div className="flex justify-between max-w-sm text-sm">
+              <div className="flex max-w-sm justify-between text-sm">
                 <span className="text-neutral-600">
                   Components
                 </span>
@@ -100,7 +100,7 @@ export default function F6FProject() {
                 </span>
               </div>
 
-              <div className="flex justify-between max-w-sm text-sm">
+              <div className="flex max-w-sm justify-between text-sm">
                 <span className="text-neutral-600">
                   Electronics
                 </span>
@@ -114,23 +114,20 @@ export default function F6FProject() {
 
           </div>
 
-
           {/* HERO */}
           <div className="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900">
 
-            <Image
+            <ImageLightbox
               src="/f6f/f6f_hero.jpg"
               alt="F6F RC Aircraft"
               width={1600}
               height={900}
-              sizes="(max-width: 1024px) 100vw, 60vw"
               className="aspect-[16/9] w-full object-cover"
             />
 
           </div>
 
         </div>
-
 
         {/* GALLERY */}
         <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-4">
@@ -141,12 +138,11 @@ export default function F6FProject() {
 
               <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900">
 
-                <Image
+                <ImageLightbox
                   src={item.image}
                   alt={item.title}
                   width={1000}
                   height={750}
-                  sizes="(max-width: 1024px) 100vw, 33vw"
                   className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                 />
 
@@ -169,7 +165,6 @@ export default function F6FProject() {
           ))}
 
         </div>
-
 
         {/* BACK */}
         <div className="mt-10 border-t border-neutral-900 pt-6">

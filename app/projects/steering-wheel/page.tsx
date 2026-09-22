@@ -1,21 +1,21 @@
-import Image from "next/image";
+import ImageLightbox from "@/components/ImageLightbox";
 
 export default function SteeringWheel() {
   const gallery = [
     {
-      title: "Electronics",
-      image: "/steering_wheel/steering_wheel_electronics.jpg",
-      description: "Integrated electronics",
+      title: "Designed from scratch",
+      image: "/steering_wheel/steering_wheel_cad.jpg",
+      description: "Completly engineered from zero",
     },
     {
-      title: "Controls",
-      image: "/steering_wheel/steering_wheel_controls.jpg",
-      description: "Buttons and controls",
+      title: "Custom electronics",
+      image: "/steering_wheel/steering_wheel_pcb.jpg",
+      description: "Custom pcb",
     },
     {
-      title: "Details",
-      image: "/steering_wheel/steering_wheel_detail.jpg",
-      description: "3D printed details",
+      title: "Working display and leds",
+      image: "/steering_wheel/steering_wheel_dis.jpg",
+      description: "Connected to Assetto Corsa",
     },
   ];
 
@@ -33,15 +33,15 @@ export default function SteeringWheel() {
         </a>
 
         <nav className="flex gap-6 text-sm text-neutral-500">
-
-          <a href="/#about" className="transition hover:text-white">
+          <a
+            href="/#about"
+            className="transition hover:text-white"
+          >
             About
           </a>
-
         </nav>
 
       </header>
-
 
       {/* PROJECT */}
       <section className="mx-auto max-w-[1400px] px-6 pb-16 pt-10 lg:px-10">
@@ -60,7 +60,6 @@ export default function SteeringWheel() {
               Custom sim racing steering wheel combining mechanical design,
               electronics and custom 3D printed components.
             </p>
-
 
             {/* SMALL INFO */}
             <div className="mt-8 space-y-3 border-t border-neutral-900 pt-5">
@@ -109,23 +108,20 @@ export default function SteeringWheel() {
 
           </div>
 
-
           {/* HERO */}
           <div className="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900">
 
-            <Image
+            <ImageLightbox
               src="/steering_wheel/steering_wheel_hero.jpg"
               alt="Steering Wheel"
               width={1600}
               height={900}
-              sizes="(max-width: 1024px) 100vw, 60vw"
               className="aspect-[16/9] w-full object-cover"
             />
 
           </div>
 
         </div>
-
 
         {/* GALLERY */}
         <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
@@ -136,12 +132,11 @@ export default function SteeringWheel() {
 
               <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900">
 
-                <Image
+                <ImageLightbox
                   src={item.image}
                   alt={item.title}
                   width={1000}
                   height={750}
-                  sizes="(max-width: 1024px) 100vw, 33vw"
                   className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                 />
 
@@ -164,7 +159,6 @@ export default function SteeringWheel() {
           ))}
 
         </div>
-
 
         {/* BACK */}
         <div className="mt-10 border-t border-neutral-900 pt-6">
