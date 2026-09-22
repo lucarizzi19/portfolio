@@ -8,9 +8,9 @@ export default function SteeringWheel() {
       description: "Completly engineered from zero",
     },
     {
-      title: "Custom electronics",
+      title: "Custom PCB",
       image: "/steering_wheel/steering_wheel_pcb.jpg",
-      description: "Custom pcb",
+      description: "Custom pcb to include all the functionalities in only one board",
     },
     {
       title: "Working display and leds",

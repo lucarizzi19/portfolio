@@ -24,7 +24,7 @@ const projects = [
     description:
       "Detailed physical model focused on mechanical structure, proportions and surface finishing.",
     image: null,
-    link: null,
+    link: "/projects/sim-rig",
   },
   {
     title: "Lego wheels",
