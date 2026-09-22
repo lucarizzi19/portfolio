@@ -23,7 +23,7 @@ const projects = [
     category: "Design · CAD · Manufacturing",
     description:
       "Detailed physical model focused on mechanical structure, proportions and surface finishing.",
-    image: null,
+    image: "/sim_rig/sim_rig_hero.jpg",
     link: "/projects/sim-rig",
   },
   {
