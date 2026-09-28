@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "F6F RC Aircraft",
+    title: "F6F RC aircraft",
     category: "Model Making · RC · 3D Printing",
     description:
       "Scale aircraft model combining traditional balsa construction, RC electronics and custom 3D printed components.",
@@ -11,7 +11,7 @@ const projects = [
     link: "/projects/f6f",
   },
   {
-    title: "Steering Wheel",
+    title: "F4 Steering wheel replica",
     category: "CAD · Electronics · 3D Printing",
     description:
       "Custom sim racing steering wheel combining mechanical design, electronics and 3D printed components.",
@@ -22,13 +22,13 @@ const projects = [
     title: "Sim rig",
     category: "Design · CAD · Manufacturing",
     description:
-      "Detailed physical model focused on mechanical structure, proportions and surface finishing.",
+      "Custom sim racing rig designed and built from scratch, with a focus on mechanical structure, ergonomics and strength.",
     image: "/sim_rig/sim_rig_hero.jpg",
     link: "/projects/sim-rig",
   },
   {
     title: "Lego wheels",
-    category: "Modelling · Resin · Finishing",
+    category: "Modelling · Printing · Painting",
     description:
       "Custom wheel designs combining CAD modelling, resin printing and finishing.",
     image: "/lego_wheels/lego_wheels_02.jpg",
@@ -64,18 +64,14 @@ export default function Home() {
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
 
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-neutral-500">
-              Industrial Model Maker
-            </p>
 
             <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-              From CAD to physical models.
+              From an idea to something real.
             </h1>
           </div>
 
           <p className="max-w-md text-sm leading-6 text-neutral-500">
-            Scale models, prototypes and detailed physical objects,
-            designed and manufactured from concept to final finish.
+            Designing and building scale models, prototypes and custom parts from scratch.
           </p>
 
         </div>
@@ -91,9 +87,6 @@ export default function Home() {
             Projects
           </p>
 
-          <p className="text-xs text-neutral-700">
-            {String(projects.length).padStart(2, "0")} projects
-          </p>
         </div>
 
         <div className="grid gap-x-8 gap-y-14 sm:grid-cols-1 lg:grid-cols-4">
@@ -205,7 +198,7 @@ export default function Home() {
               </h2>
 
               <p className="mt-2 text-sm text-neutral-500">
-                Mechanical Engineer · Italy
+                Mechanical Engineer · Turin · Italy
               </p>
 
               <p className="mt-6 max-w-2xl text-sm leading-7 text-neutral-500">
@@ -215,8 +208,7 @@ export default function Home() {
 
               <p className="mt-4 max-w-2xl text-sm leading-7 text-neutral-500">
                 I'm particularly interested in model making, 3D printing,
-                electronics and mechanical projects — especially when CAD
-                eventually becomes something physical.
+                electronics and mechanical projects.
               </p>
             </div>
 
@@ -249,7 +241,7 @@ export default function Home() {
 
               {/* LINKEDIN */}
               <a
-                href="https://www.linkedin.com/in/TUO-PROFILO/"
+                href="https://www.linkedin.com/in/lucarizzi19/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-neutral-700 px-5 py-3 text-sm font-medium text-neutral-200 transition hover:border-neutral-500 hover:bg-neutral-900 hover:text-white"
@@ -275,7 +267,6 @@ export default function Home() {
       <footer className="border-t border-neutral-900 px-6 py-8 lg:px-12">
         <div className="mx-auto flex max-w-[1400px] justify-between text-xs text-neutral-700">
           <span>Luca Rizzi</span>
-          <span>Industrial Model Maker</span>
         </div>
       </footer>
 
