@@ -70,10 +70,6 @@ export default function Home() {
             </h1>
           </div>
 
-          <p className="max-w-md text-sm leading-6 text-neutral-500">
-            Designing and building scale models, prototypes and custom parts from scratch.
-          </p>
-
         </div>
       </section>
 
