@@ -1,4 +1,4 @@
-import ImageLightbox from "@/components/ImageLightbox";
+import Image from "next/image";
 
 const images = [
   "/lego_wheels/lego_wheels_01.jpg",
@@ -11,9 +11,9 @@ const images = [
 
 export default function LegoWheelsPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 lg:px-10">
+    <main className="h-screen overflow-hidden bg-neutral-950 text-white">
+      {/* HEADER */}
+      <header className="mx-auto flex h-[68px] max-w-[1400px] items-center justify-between px-6 lg:px-10">
         <a
           href="/"
           className="text-lg font-semibold tracking-tight transition hover:text-neutral-400"
@@ -32,30 +32,46 @@ export default function LegoWheelsPage() {
         </nav>
       </header>
 
-      {/* Content */}
-      <section className="mx-auto max-w-[1400px] px-6 py-10 lg:px-10">
-        <div className="mb-8">
-          <p className="mb-2 text-sm text-neutral-500">
-            Modelling · Resin · Finishing
-          </p>
-
-          <h1 className="text-3xl font-semibold tracking-tight">
+      {/* CONTENT */}
+      <section className="mx-auto flex h-[calc(100vh-68px)] max-w-[1400px] flex-col px-6 pb-6 pt-5 lg:px-10">
+        {/* INTRO */}
+        <div className="mb-5 shrink-0">
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             Lego wheels
           </h1>
+
+          <p className="mt-2 max-w-2xl text-sm leading-5 text-neutral-500">
+            Custom wheel designs for LEGO models, developed through CAD
+            modelling, resin printing and hand finishing with airbrush.
+          </p>
         </div>
 
-        {/* Gallery */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* GALLERY */}
+        <div className="grid min-h-0 flex-1 grid-cols-3 grid-rows-2 gap-5">
           {images.map((image, index) => (
-            <ImageLightbox
+            <div
               key={image}
-              src={image}
-              alt={`LEGO wheels ${index + 1}`}
-              width={800}
-              height={450}
-              className="h-48 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-            />
+              className="relative min-h-0 min-w-0 overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900"
+            >
+              <Image
+                src={image}
+                alt={`LEGO wheels ${index + 1}`}
+                fill
+                sizes="(min-width: 1024px) 33vw, 50vw"
+                className="object-cover object-center transition-transform duration-500 hover:scale-[1.03]"
+              />
+            </div>
           ))}
+        </div>
+
+        {/* BACK */}
+        <div className="mt-4 shrink-0 border-t border-neutral-900 pt-3">
+          <a
+            href="/"
+            className="text-sm text-neutral-500 transition hover:text-white"
+          >
+            ← Back to projects
+          </a>
         </div>
       </section>
     </main>

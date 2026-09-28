@@ -1,11 +1,11 @@
-import ImageLightbox from "@/components/ImageLightbox";
+import Image from "next/image";
 
 export default function F6FProject() {
   const gallery = [
     {
       title: "3D printed engine mount",
       image: "/f6f/f6f_nose.jpg",
-      description: "Custom 3D printed components",
+      description: "Custom 3D printed component",
     },
     {
       title: "RC system",
@@ -25,11 +25,9 @@ export default function F6FProject() {
   ];
 
   return (
-    <main className="min-h-screen bg-neutral-950 text-white">
-
+    <main className="h-screen overflow-hidden bg-neutral-950 text-white">
       {/* HEADER */}
-      <header className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 lg:px-10">
-
+      <header className="mx-auto flex h-[68px] max-w-[1400px] items-center justify-between px-6 lg:px-10">
         <a
           href="/"
           className="text-lg font-semibold tracking-tight transition hover:text-neutral-400"
@@ -38,103 +36,87 @@ export default function F6FProject() {
         </a>
 
         <nav className="flex gap-6 text-sm text-neutral-500">
-          <a
-            href="/#about"
-            className="transition hover:text-white"
-          >
+          <a href="/#about" className="transition hover:text-white">
             About
           </a>
         </nav>
-
       </header>
 
       {/* PROJECT */}
-      <section className="mx-auto max-w-[1400px] px-6 pb-16 pt-10 lg:px-10">
-
+      <section className="mx-auto flex h-[calc(100vh-68px)] max-w-[1400px] flex-col px-6 pb-6 pt-5 lg:px-10">
         {/* INTRO */}
-        <div className="mb-10 max-w-3xl">
-
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+        <div className="mb-5 shrink-0">
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             F6F RC Aircraft
           </h1>
 
-          <p className="mt-5 max-w-2xl text-sm leading-6 text-neutral-500">
+          <p className="mt-2 max-w-2xl text-sm leading-5 text-neutral-500">
             Scale RC aircraft combining traditional balsa construction,
             custom 3D printed components, electronics and integrated
             lighting.
           </p>
-
         </div>
 
-        {/* IMAGE GRID */}
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid min-h-0 flex-1 gap-5 lg:grid-cols-2">
 
           {/* HERO */}
-          <div className="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900">
-
-            <ImageLightbox
+          <div className="relative h-full min-h-0 min-w-0 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900">
+            <Image
               src="/f6f/f6f_hero.jpg"
               alt="F6F RC Aircraft"
-              width={1600}
-              height={1200}
-              className="h-full min-h-[500px] w-full object-cover transition duration-500 hover:scale-[1.02]"
+              fill
+              sizes="(min-width: 1024px) 57vw, 100vw"
+              className="object-cover object-center transition-transform duration-500 hover:scale-[1.03]"
             />
-
           </div>
 
-          {/* GALLERY 2x2 */}
-          <div className="grid grid-cols-2 gap-5">
+          {/* GALLERY */}
+          <div className="grid h-full min-h-0 min-w-0 grid-cols-2 grid-rows-2 gap-5">
 
             {gallery.map((item) => (
+              <div
+                key={item.title}
+                className="grid min-h-0 min-w-0 grid-rows-[minmax(0,1fr)_auto]"
+              >
 
-              <div key={item.title} className="group">
-
-                <div className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900">
-
-                  <ImageLightbox
+                {/* IMAGE BOX */}
+                <div className="relative min-h-0 min-w-0 overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900">
+                  <Image
                     src={item.image}
                     alt={item.title}
-                    width={1000}
-                    height={750}
-                    className="aspect-[4/3] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                    fill
+                    sizes="(min-width: 1024px) 20vw, 50vw"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                   />
-
                 </div>
 
-                <div className="mt-3">
-
-                  <h2 className="text-sm font-medium text-neutral-200">
+                {/* INFO */}
+                <div className="min-w-0 pt-2">
+                  <h2 className="truncate text-sm font-medium leading-5 text-neutral-200">
                     {item.title}
                   </h2>
 
-                  <p className="mt-1 text-xs text-neutral-600">
+                  <p className="truncate text-xs leading-4 text-neutral-600">
                     {item.description}
                   </p>
-
                 </div>
 
               </div>
-
             ))}
 
           </div>
-
         </div>
 
         {/* BACK */}
-        <div className="mt-10 border-t border-neutral-900 pt-6">
-
+        <div className="mt-4 shrink-0 border-t border-neutral-900 pt-3">
           <a
             href="/"
             className="text-sm text-neutral-500 transition hover:text-white"
           >
             ← Back to projects
           </a>
-
         </div>
-
       </section>
-
     </main>
   );
 }
