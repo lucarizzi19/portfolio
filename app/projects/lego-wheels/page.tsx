@@ -41,7 +41,7 @@ export default function LegoWheelsPage() {
           </h1>
 
           <p className="mt-2 max-w-2xl text-sm leading-5 text-neutral-500">
-            Custom wheel designs for LEGO models, developed through CAD
+            Wheel designs for LEGO models, developed through CAD
             modelling, resin printing and hand finishing with airbrush.
           </p>
         </div>

@@ -3,6 +3,14 @@ import Link from "next/link";
 
 const projects = [
   {
+    title: "Sim rig",
+    category: "Design · CAD · Manufacturing",
+    description:
+      "Sim racing rig designed and built from scratch, with a focus on mechanical structure, ergonomics and strength.",
+    image: "/sim_rig/sim_rig_hero.jpg",
+    link: "/projects/sim-rig",
+  },
+  {
     title: "F6F RC aircraft",
     category: "Model Making · RC · 3D Printing",
     description:
@@ -14,23 +22,15 @@ const projects = [
     title: "F4 Steering wheel replica",
     category: "CAD · Electronics · 3D Printing",
     description:
-      "Custom sim racing steering wheel combining mechanical design, electronics and 3D printed components.",
+      "Sim racing steering wheel combining mechanical design, electronics and 3D printed components.",
     image: "/steering_wheel/steering_wheel_hero.jpg",
     link: "/projects/steering-wheel",
-  },
-  {
-    title: "Sim rig",
-    category: "Design · CAD · Manufacturing",
-    description:
-      "Custom sim racing rig designed and built from scratch, with a focus on mechanical structure, ergonomics and strength.",
-    image: "/sim_rig/sim_rig_hero.jpg",
-    link: "/projects/sim-rig",
   },
   {
     title: "Lego wheels",
     category: "Modelling · Printing · Painting",
     description:
-      "Custom wheel designs combining CAD modelling, resin printing and finishing.",
+      "Wheel designs combining CAD modelling, resin printing and finishing.",
     image: "/lego_wheels/lego_wheels_02.jpg",
     link: "/projects/lego-wheels",
   },
@@ -123,7 +123,7 @@ export default function Home() {
                 </div>
 
                 {/* INFO */}
-                <div className="mt-5">
+                <div className="mt-5 flex min-h-[190px] flex-col">
                   <div className="flex items-start justify-between gap-4">
 
                     <p className="text-xs uppercase tracking-[0.15em] text-neutral-500">
@@ -143,12 +143,6 @@ export default function Home() {
                   <p className="mt-2 max-w-md text-sm leading-6 text-neutral-500">
                     {project.description}
                   </p>
-
-                  {project.link && (
-                    <div className="mt-4 text-sm text-neutral-400 transition group-hover:text-white">
-                      View project →
-                    </div>
-                  )}
                 </div>
               </>
             );

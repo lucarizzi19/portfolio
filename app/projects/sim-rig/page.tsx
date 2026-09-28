@@ -48,7 +48,7 @@ export default function SimRig() {
           </h1>
 
           <p className="mt-2 max-w-2xl text-sm leading-5 text-neutral-500">
-            Custom sim racing rig designed from scratch, combining CAD
+            Sim racing rig designed from scratch, combining CAD
             engineering, a rigid wooden structure and adjustable driving
             ergonomics.
           </p>
